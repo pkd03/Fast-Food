@@ -10,7 +10,7 @@ const Add = ({ url }) => {
     name: "",
     description: "",
     price: "",
-    category: "Salad",
+    category: "...",
   });
 
   // Xử lý sự kiện khi có thay đổi ở các ô nhập liệu
@@ -96,11 +96,12 @@ const Add = ({ url }) => {
               value={data.category}
               required
             >
+              <option value="...">...</option>
               <option value="Burger">Burger</option>
-              <option value="buriro">buriro</option>
-              <option value="garan">Gà rán</option>
-              <option value="hotdog">hot dog</option>
-              <option value="pasta">pasta</option>
+              <option value="Buriro">Buriro</option>
+              <option value="Gà rán">Gà rán</option>
+              <option value="Hot dog">Hot dog</option>
+              <option value="Pasta">Pasta</option>
             </select>
           </div>
 
@@ -114,6 +115,7 @@ const Add = ({ url }) => {
               value={data.price}
               type="number"
               name="price"
+              max="999"
               className="form-control"
               id="productPrice"
               placeholder="Nhập giá"

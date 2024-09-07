@@ -28,7 +28,7 @@ const Navbar = () => {
               type="button"
               role="tab"
               aria-controls="pills-home"
-              aria-selected="true"
+              aria-selected="false"
             >
               Thêm sản phẩm
             </button>

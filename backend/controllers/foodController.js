@@ -42,6 +42,36 @@ const listFood = async (req, res) => {
     res.json({ success: false, message: "Error" });
   }
 };
+//tìm kiếm food
+
+const searchFood = async (req, res) => {
+  try {
+    const keyword = req.query.keyword;
+    const foods = await foodModel.find({
+      $or: [
+        { name: { $regex: keyword, $options: "i" } },
+        { description: { $regex: keyword, $options: "i" } },
+      ],
+    });
+    res.json({ success: true, data: foods });
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, message: "Error" });
+  }
+};
+
+// Show items by category
+
+const getFoodByCategory = async (req, res) => {
+  try {
+    const category = req.query.category;
+    const foods = await foodModel.find({ category });
+    res.json({ success: true, data: foods });
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, message: "Error" });
+  }
+};
 
 // remove food item
 const removeFood = async (req, res) => {
@@ -57,4 +87,4 @@ const removeFood = async (req, res) => {
   }
 };
 
-export { addFood, listFood, removeFood };
+export { addFood, listFood, searchFood, getFoodByCategory, removeFood };
