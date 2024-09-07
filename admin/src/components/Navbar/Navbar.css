@@ -1,0 +1,14 @@
+.navbar {
+  display: flex;
+  background-color: #ffece5;
+  padding: 20px;
+}
+.logo {
+  width: 80px;
+  height: 80px;
+}
+
+.settings {
+  width: 40px;
+  height: 40px;
+}
