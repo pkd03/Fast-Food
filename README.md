@@ -14,3 +14,8 @@ npm run dev
 
 cd backend
 npm start server
+
+# menu cố định
+
+import food-list.foods.json vào mongodb
+cop ảnh trong folder ảnh vào file upload (..\\Fast Food\backend\uploads)
