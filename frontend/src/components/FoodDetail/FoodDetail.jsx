@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { assets } from "../../assets/assets";
 import { useParams, useNavigate } from "react-router-dom";
 import { StoreContext } from "../../context/StoreContext";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./FoodDetail.css";
 
 const FoodDetail = () => {
@@ -20,7 +22,7 @@ const FoodDetail = () => {
 
   const handleAddToCart = () => {
     addToCart(id, quantity); // Thêm sản phẩm với số lượng hiện tại
-    navigate("/cart"); // Chuyển hướng đến trang giỏ hàng
+    toast.success("Đã thêm vào giỏ hàng");
   };
 
   const handlePayment = () => {
@@ -65,11 +67,14 @@ const FoodDetail = () => {
             <button onClick={increaseQuantity}>+</button>
           </div>
         </div>
-        <button onClick={handlePayment}>Mua ngay</button>
+        <button onClick={handlePayment} className="btn_buy_now">
+          Mua ngay
+        </button>
         <button className="btn_add_to_cart" onClick={handleAddToCart}>
           Thêm vào giỏ hàng
         </button>
       </div>
+      <ToastContainer />
     </div>
   );
 };
