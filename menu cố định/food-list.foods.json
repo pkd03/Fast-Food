@@ -1,0 +1,11 @@
+[{
+  "_id": {
+    "$oid": "680941f699a613fd65b663c9"
+  },
+  "name": "cơm",
+  "description": "5eyr",
+  "price": 2000,
+  "image": "1745437174445áº£nh 4x6.jpg",
+  "category": "Burger",
+  "__v": 0
+}]
